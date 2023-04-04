@@ -1,0 +1,532 @@
+@charset "UTF-8";
+/*
+Pagina totalmente responsive, en terminos generales está terminada 
+sin embargo hay cosas por mejorar por ejemplo el banner el desktop (size)
+agregar:
+1. funcionalidad de bars y menu de desktop 
+*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Noto Sans Symbols 2", sans-serif;
+}
+
+p {
+  font-size: 1em;
+}
+
+h1 {
+  font-size: 9vw;
+  margin: 0.8em 0 0.2em 0;
+}
+
+h2 {
+  font-size: 1.3em;
+}
+
+h3 {
+  font-size: 1.3em;
+}
+
+h4 {
+  font-size: 1.5em;
+}
+
+h5 {
+  font-size: 1em;
+}
+
+a {
+  font-size: 1em;
+  text-decoration: none;
+  color: black;
+}
+
+i {
+  font-size: 2em;
+}
+
+span {
+  color: rgb(172, 171, 171);
+}
+
+input {
+  width: 85%;
+  height: 50px;
+  margin-bottom: 0.3em;
+  font-size: 1.3em;
+  padding: 10px;
+}
+
+.hidden {
+  opacity: 0;
+  transition: all 1s;
+  filter: blur(5px);
+}
+
+.show {
+  opacity: 1;
+  filter: blur(0);
+}
+
+.cuadro-check:nth-child(2) {
+  transition-delay: 200ms;
+}
+
+.cuadro-check:nth-child(3) {
+  transition-delay: 400ms;
+}
+
+.cuadro-check:nth-child(4) {
+  transition-delay: 600ms;
+}
+
+.container {
+  max-width: 1600PX;
+  margin: auto;
+}
+
+header {
+  height: 8vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(172, 171, 171);
+  padding: 0.7em;
+  transition: 0.3s;
+}
+header .menu-bars {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+header .menu-bars i {
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+header .menu-bars i:hover {
+  color: #ee9268;
+}
+header .menu-bars .container-nav {
+  display: none;
+  transition: 0.3s;
+}
+header .menu-bars .container-nav.active {
+  width: 17em;
+  margin-top: 0.5em;
+  display: block;
+}
+header .menu-bars .container-nav.active ul {
+  display: flex;
+  list-style: none;
+}
+header .menu-bars .container-nav.active li {
+  width: 8em;
+  font-size: 1.1em;
+  font-weight: bold;
+}
+header .menu-bars .container-nav.active li a {
+  transition: 0.3s ease;
+}
+header .menu-bars .container-nav.active li a:hover {
+  color: #f7783e;
+}
+
+header.active {
+  height: 11vh;
+}
+
+.banner {
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/love-yourself.jpg);
+  background-position: center;
+  background-size: cover;
+  color: rgb(240, 240, 240);
+}
+.banner .text-hero {
+  padding: 0 30px;
+}
+.banner p {
+  line-height: 1.5em;
+  font-family: "Noto Sans Symbols 2", sans-serif;
+}
+.banner .form-inicio {
+  text-align: center;
+  margin-top: 1.5em;
+}
+.banner .form-inicio #form-email {
+  max-width: 500px;
+  margin: auto;
+}
+.banner button {
+  width: 85%;
+  height: 50px;
+  font-size: 1.3em;
+  background-color: #f7783e;
+  border: none;
+  color: rgb(240, 240, 240);
+  cursor: pointer;
+  transition: 0.3s ease-in;
+}
+.banner button:hover {
+  background-color: #f1601d;
+}
+
+.section-carts {
+  height: 54em;
+  margin-top: 2em;
+}
+.section-carts .cart {
+  width: 80%;
+  height: 17em;
+  margin: 0 auto 1em auto;
+  padding: 0.8em;
+  text-align: center;
+}
+.section-carts .container-img-cart i {
+  font-size: 4.5em;
+  margin-bottom: 0.3em;
+}
+.section-carts p {
+  margin: 0.2em 0 0.9em 0;
+}
+.section-carts .cita i {
+  font-size: 1.2em;
+  margin-right: 0.2em;
+  color: #f7783e;
+}
+.section-carts .cart-background {
+  background-color: #f7783e;
+  color: rgb(240, 240, 240);
+}
+.section-carts .cart-background i, .section-carts .cart-background a {
+  color: rgb(240, 240, 240);
+}
+
+.sobre-nosotros {
+  background-color: rgb(230, 224, 224);
+  height: 48em;
+  margin-top: 1em;
+}
+.sobre-nosotros .nuestro-psicologo {
+  width: 80%;
+  margin: 5em auto;
+  height: 19em;
+  padding-top: 3em;
+}
+.sobre-nosotros .nuestro-psicologo h4 {
+  font-size: 1.2em;
+}
+.sobre-nosotros .nuestro-psicologo h2 {
+  font-size: 2.2em;
+  line-height: 40px;
+  margin: 0.5em 0 0.5em 0;
+}
+.sobre-nosotros .nuestro-psicologo p {
+  color: #da5112;
+  font-weight: bold;
+  font-size: 1.2em;
+  line-height: 26px;
+}
+.sobre-nosotros .problemas-psicologo {
+  width: 80%;
+  margin: auto;
+}
+.sobre-nosotros .problemas-psicologo h3 {
+  font-weight: bold;
+  margin-bottom: 0.2em;
+}
+.sobre-nosotros .problemas-psicologo p {
+  margin-bottom: 2em;
+  font-size: 1.2em;
+}
+
+.secction-check {
+  width: 80%;
+  margin: auto;
+  height: 85em;
+}
+.secction-check .container-dr-pablo {
+  margin-top: 3em;
+  height: 45em;
+}
+.secction-check .container-dr-pablo .img-lentes {
+  width: 100%;
+  height: 25em;
+  background-image: url(../img/glasses.jpg);
+  background-position: center;
+  background-size: cover;
+}
+.secction-check .container-dr-pablo .comentario {
+  width: 100%;
+  height: 18em;
+  background-color: rgb(230, 224, 224);
+  padding: 1.3em;
+}
+.secction-check .container-dr-pablo .comentario .img-redonda {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 1em;
+  border-radius: 50px;
+  background-image: url(../img/doctor-sonriente-tiro-medio-brazos-cruzados.jpg);
+  background-position: left;
+  background-size: cover;
+}
+.secction-check .container-dr-pablo .comentario p {
+  font-size: 1.2em;
+}
+.secction-check .container-dr-pablo .comentario h4 {
+  font-size: 1em;
+  margin-top: 1em;
+  color: #f7783e;
+}
+.secction-check .cuadricula {
+  height: 35em;
+  margin: 2em auto;
+  display: flex;
+  flex-direction: column;
+}
+.secction-check .cuadricula .cuadro-check {
+  height: auto;
+  width: 100%;
+  margin: auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.secction-check .cuadricula .cuadro-check p {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+.secction-check .cuadricula .cuadro-check .check {
+  width: 70px;
+  height: 70px;
+  border-radius: 50px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f7783e;
+}
+.secction-check .cuadricula .cuadro-check .check i {
+  font-size: 3em;
+  color: rgb(240, 240, 240);
+}
+.secction-check .cuadricula .cuadro-check .span-num {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 0.8em;
+  color: #f7783e;
+}
+
+.espacialista {
+  width: 80%;
+  margin: auto;
+}
+.espacialista .text-mision-container {
+  width: 100%;
+}
+.espacialista .text-mision-container h3 {
+  font-size: 2.2em;
+  font-weight: bold;
+}
+.espacialista .text-mision-container h4 {
+  font-size: 1.3em;
+  color: #f7783e;
+}
+.espacialista .text-mision-container .mision {
+  display: flex;
+  margin-top: 2.5em;
+}
+.espacialista .text-mision-container .mision .img-mision {
+  font-size: 1.2em;
+  margin-right: 1em;
+  color: #f7783e;
+}
+.espacialista .img-rigth-mision {
+  width: 100%;
+  height: 20em;
+  margin-top: 2em;
+  padding: 2em;
+  background-image: url(../img/pareja-terapia.jpg);
+  background-position: bottom;
+  background-size: cover;
+}
+
+.citas-contacto {
+  width: 100%;
+  margin: 5em auto 0 auto;
+  background-color: rgb(230, 224, 224);
+  text-align: center;
+}
+.citas-contacto .img-izq {
+  width: 80%;
+  height: 25em;
+  margin: 0 auto 2em auto;
+  background-image: url(../img/terapia-familiar-consultorio-psicologo.jpg);
+  background-position: center;
+  background-size: cover;
+}
+.citas-contacto .tel i {
+  color: #f7783e;
+}
+
+footer {
+  height: 5em;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+@media (min-width: 514px) {
+  .sobre-nosotros {
+    height: 42em;
+  }
+  .sobre-nosotros .nuestro-psicologo {
+    margin: 2em auto;
+  }
+}
+@media (min-width: 626px) {
+  h1 {
+    font-size: 8.5vw;
+    line-height: 1.4em;
+  }
+  .banner p {
+    font-size: 2.5vw;
+  }
+}
+@media (min-width: 870px) {
+  h1 {
+    font-size: 7.5vw;
+  }
+  .banner .form-inicio #form-email {
+    display: flex;
+  }
+  input {
+    width: 130%;
+  }
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .section-carts {
+    height: auto;
+    margin-top: 3em;
+  }
+  .section-carts .cart {
+    width: 45%;
+    margin-top: 1em;
+  }
+  .sobre-nosotros {
+    height: 35em;
+    padding: 4em;
+  }
+  .sobre-nosotros .nuestro-psicologo {
+    width: 45%;
+    padding-top: 0;
+  }
+  .sobre-nosotros .problemas-psicologo {
+    width: 45%;
+    padding-top: 4em;
+  }
+  .secction-check {
+    height: 90em;
+  }
+  .secction-check .container-dr-pablo .img-lentes {
+    width: 70%;
+    height: 40em;
+  }
+  .secction-check .container-dr-pablo .comentario {
+    width: 60%;
+    position: relative;
+    right: -10em;
+    top: -10em;
+  }
+  .secction-check .cuadricula {
+    margin: 4em auto;
+  }
+  .espacialista .container {
+    display: flex;
+    justify-content: space-between;
+  }
+  .espacialista .text-mision-container {
+    width: 45%;
+  }
+  .espacialista .img-rigth-mision {
+    width: 45%;
+    height: 25em;
+  }
+  .citas-contacto .container {
+    justify-content: center;
+  }
+  .abierto-citas {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: rgb(240, 240, 240);
+    margin: 1.5em;
+    width: 80%;
+  }
+  .citas-contacto .img-izq {
+    width: 40%;
+    margin: 1.5em;
+  }
+  .tel {
+    text-align: center;
+  }
+}
+@media (min-width: 1238px) {
+  h1 {
+    font-size: 5.5vw;
+  }
+  .banner p {
+    font-size: 2.2vw;
+  }
+  .section-carts .cart {
+    width: 30%;
+  }
+  .sobre-nosotros .nuestro-psicologo h2 {
+    line-height: 50px;
+  }
+  .sobre-nosotros .nuestro-psicologo p {
+    width: 75%;
+  }
+  .secction-check {
+    height: 58em;
+  }
+  .secction-check .container {
+    height: 55em;
+    display: flex;
+    align-items: center;
+  }
+}
+@media (min-width: 1450px) {
+  h1 {
+    font-size: 5vw;
+  }
+  .banner p {
+    font-size: 2vw;
+  }
+}
+@media (min-width: 1600px) {
+  h1 {
+    font-size: 4.7vw;
+  }
+  .banner p {
+    font-size: 1.8vw;
+  }
+}
+
+/*# sourceMappingURL=estilos.css.map */
